@@ -7,3 +7,12 @@ router.get('/', function(req, res, next) {
 });
 
 module.exports = router;
+// http://127.0.0.1:3000/get/ncufresh/?year=23
+router.get('/get/:message/',function(req,res,next){
+  res.send(req.params.message+req.query.year);
+});
+ 
+// curl -X POST http://127.0.0.1:3000/post --data message=hello
+router.post('/post',function(req,res,next){
+  res.send(req.body.message);
+});
